@@ -8,6 +8,7 @@
 
 <body>
 	<div class="container mt-4">
+		<a th:href="@{/new}" class="btn btn-primary">NUEVO</a>
 		<table class="table">
 			<thead>
 				<tr>
@@ -21,14 +22,14 @@
 			</thead>
 			<tbody>
 				<tr th:each="persona:${personas}">
-					<td th:text="${persona.id}">ff</td>
+					<td th:text="${persona.id}"></td>
 					<td th:text="${persona.nombre}" ></td>
 					<td th:text="${persona.apellido}"></td>
 					<td th:text="${persona.numero}"></td>
 					<td th:text="${persona.descripcion}"></td>
 					<td>
-						<a class ="btn btn-warning">Editar</a>
-						<a class ="btn btn-danger">Eliminar</a>
+						<a th:href="@{/editar/}+${persona.id}" class ="btn btn-warning">Editar</a>
+						<a th:href="@{/eliminar/}+${persona.id}"class ="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>

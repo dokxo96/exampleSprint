@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th"http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/save}" th:object=${persona} method="POST">
+				<div class="card">
+					<div class="card-header">
+						<H3>Agregar Persona</H3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label>ID</label>
+							<input th:field="*{id}" type="text" class="form-control"/>
+						</div>
+						
+						<div class="form-group">
+							<label>NOMBRE</label>
+							<input th:field="*{nombre}" type="text" class="form-control"/>
+						</div>
+						
+						<div class="form-group">
+							<label>APELLIDO</label>
+							<input th:field="*{apellido}" type="text" class="form-control"/>
+						</div>
+						
+						<div class="form-group">
+							<label>NÚMERO</label>
+							<input th:field="*{numero}" type="int" class="form-control"/>
+						</div>
+						
+						<div class="form-group">
+							<label>DESCRIPCION</label>
+							<input th:field="*{descripcion}" type="text" class="form-control"/>
+						</div>
+					</div>
+					<div class="card-footer">
+						<input type="submit" value="Guardar" class="btn btn-success"/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

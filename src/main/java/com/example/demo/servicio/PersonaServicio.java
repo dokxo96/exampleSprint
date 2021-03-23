@@ -22,20 +22,24 @@ public class PersonaServicio implements IPersonaService{
 
 	@Override
 	public Optional<Persona> listarId(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return data.findById(id);
 	}
 
 	@Override
 	public int save(Persona p) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res=0;
+		Persona persona =data.save(p);
+		if(!persona.equals(null)) {
+				res=1;
+		}
+		return res;
 	}
 
 	@Override
 	public void delete(int id) {
 		// TODO Auto-generated method stub
-		
+		data.deleteById(id);
 	}
 
 }
